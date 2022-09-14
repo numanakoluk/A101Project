@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.text.html.CSS;
+
 public class Main extends Dev{
 
     public Main(){}
@@ -11,11 +13,13 @@ public class Main extends Dev{
     public WebDriver driver = Dev.driver;
 
     public void StartBrowser(String url){
+        //Sayfa Büyük pencerede açılsın.
         driver.manage().window().maximize();
         driver.get(url);
     }
 
     public void Navigate(String css, String text) throws InterruptedException {
+        //Path bulma
         WebElement menu = driver.findElement(By.cssSelector(css));
         Actions builder = new Actions(driver);
         builder.moveToElement(menu).build().perform();
@@ -49,9 +53,11 @@ public class Main extends Dev{
         }
     }
 
+
     public void Write(String xpath, String data) throws InterruptedException {
         Thread.sleep(1000);
         try{
+            //Xpath ile çek.
             WebElement object = driver.findElement(By.xpath(xpath));
             object.sendKeys(data);
         }catch (Exception e){

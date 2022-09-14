@@ -17,10 +17,10 @@ public class Init{
         main.Click("/html/body/div[2]/div/div[4]/div[1]/div[2]/button[4]");
 
 //      Diz altı çorap kategorisine git
-        main.Navigate("[title='GİYİM & AKSESUAR']", "Dizaltı Çorap");
+        main.Navigate("[title='ELEKTRONİK']", "Bluetooth Kulaklık");
 
 //      Çorap seç
-        main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[1]/article/a");
+        main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[5]/article/a");
 
 //      Renk sec
         main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/a");
