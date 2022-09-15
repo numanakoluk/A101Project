@@ -10,84 +10,85 @@ public class Init{
 
         Main main = new Main();
         String baseurl = "https://a101.com.tr";
-        //Tarayıcı Aç
+
+        //Open browser
         main.StartBrowser(baseurl);
 
 
-//      Başta çıkan Cookileri Kabul Et
+//      Accept Cookies
         main.Click("/html/body/div[2]/div/div[4]/div[1]/div[2]/button[4]");
 
-//      Diz Altı Çorap Kategorisi Getirilir
+//      Below Knee Socks Category
         main.Navigate("[title='GİYİM & AKSESUAR']", "Dizaltı Çorap");
 
-//      Çorap Seçilir
+//      Choose Socks
         main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[1]/article/a");
 
-//      Renk Seçilir
-        main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[3]/div/a");
+//      Choose Color
+        main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/a");
 
-//      Sepete Eklenir
+//      Add To Basket
         main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[2]/div[1]/button");
 
-//      Sepete Gidilir
+//      Go to Basket
         main.Click("/html/body/div[2]/div/div[1]/div/div[3]/a[3]");
 
-//      Sepet Onaylanır
+//      Approve to Basket
         main.Click("/html/body/section/div[1]/div[2]/div/div[2]/div/a");
 
-//      Üyesiz Devam Et
+//      Continue Without Membership
         main.Click("/html/body/section/div[1]/div/div[1]/div[1]/div[2]/a");
 
-//      Mail Adresine Git
+//      Go To Email Address
         main.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk01@mail.com");
 
-//      Devam Butonuna Bas
+//      Press Continue Button
         main.Click("/html/body/section/div[1]/div/div[2]/div/div/form/button");
 
-//      Adres Oluşturulur
+//      Create Address
         main.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[1]/div[2]/ul[2]/li/a");
 
-//      Adres Başlığı
+//      Address Title
         main.Write("/html/body/div[1]/div/div[2]/form/div[2]/div/div/label/input","EV");
 
-//      Ad
+//      Name
         main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[1]/div/label/input",System.currentTimeMillis()+"Numan");
 
-//      Soyad
+//      Surname
         main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[2]/div/label/input",System.currentTimeMillis()+"AKOLUK");
 
-//      Telefon Numarası
-        main.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","0500 000 0000");
+//      Phone Number
+        main.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","05000000000");
 
-//      İl
+//      Country
         main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[1]/div/label/div/select","İSTANBUL");
 
-//      İlçe
+//      District
         main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[2]/div/label/div/select","ŞİŞLİ");
 
-//      Mahalle
+//      Neighbourhood
         main.SelectBox("/html/body/div[1]/div/div[2]/form/div[6]/label/div/select","PAŞA MAH");
 
-//      Adres
+//      Address
         main.Write("/html/body/div[1]/div/div[2]/form/div[7]/label/textarea","Ev Adresim Açıklaması...");
 
-//      Posta kodu
-        main.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","012345");
+//      Post Code
+        main.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","00000");
 
-//      Kaydet
+//      Save
         main.Click("/html/body/div[1]/div/div[2]/form/button[1]");
 
-//      İlk kargo firmasını seç
+//      Select the first shipping company
         main.ClickCss("div[class='check']");
 
-//      Kaydet ve devam et
+//      Save and Continue
         main.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[2]/form/div[2]/button");
 
 
-//      Siparişi tmamala
+//      Complate Order
         Boolean data = main.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
 
-//      Tarayıcı Kapat
+//      Close Browser
         main.StopBrowser();
 
         return data;

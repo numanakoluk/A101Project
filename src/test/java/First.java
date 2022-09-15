@@ -12,5 +12,8 @@ public class First {
 
         Boolean data = Init.StartTest();
         Assert.assertTrue(data);
+        System.out.println("Success");
     }
+
+
 }

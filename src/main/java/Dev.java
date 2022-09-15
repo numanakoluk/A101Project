@@ -14,6 +14,7 @@ public class Dev {
 
 
     public Dev() {
+
         this.options.addArguments(new String[]{"--disable-notifications"});
         System.setProperty("webdriver.chrome.driver", this.path);
         driver = new ChromeDriver(this.options);

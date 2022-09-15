@@ -10,18 +10,19 @@ public class Main extends Dev{
 
     public Main(){}
 
-    //Genel Nesne Üretimleri
+    //Object
     public WebDriver driver = Dev.driver;
 
-    //Genel Methodlar
+    //Methods
     public void StartBrowser(String url){
-        //Sayfa Büyük pencerede açılsın.
+        //Opening in Big Window
         driver.manage().window().maximize();
         driver.get(url);
     }
 
+    //End the Program
     public void StopBrowser() throws InterruptedException {
-        Thread.sleep(10); // Programın kapanmaması için
+        Thread.sleep(10);
         driver.close();
     }
     public void ClosePopup(){
@@ -46,7 +47,7 @@ public class Main extends Dev{
     }
 
     public void Click(String xpath) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         try{
             WebElement object = driver.findElement(By.xpath(xpath));
             object.click();
