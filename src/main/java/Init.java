@@ -59,7 +59,7 @@ public class Init{
 
 
 //      Go To Email Address
-        base.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk01@mail.com");
+        base.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk"+Math.floor(Math.random()*11) + "@gmail.com");
         System.out.println(new Date()+"-Go To Email Address");
 
 
@@ -89,7 +89,7 @@ public class Init{
 
 
 //      Phone Number
-        base.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","05796524311");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","050706524315");
         System.out.println(new Date()+"-Phone Number");
 
 
