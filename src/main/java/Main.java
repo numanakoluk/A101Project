@@ -10,12 +10,27 @@ public class Main extends Dev{
 
     public Main(){}
 
+    //Genel Nesne Üretimleri
     public WebDriver driver = Dev.driver;
 
+    //Genel Methodlar
     public void StartBrowser(String url){
         //Sayfa Büyük pencerede açılsın.
         driver.manage().window().maximize();
         driver.get(url);
+    }
+
+    public void StopBrowser() throws InterruptedException {
+        Thread.sleep(10); // Programın kapanmaması için
+        driver.close();
+    }
+    public void ClosePopup(){
+        try{
+            WebElement object = driver.findElement(By.xpath("/html/body/div[1]/div[1]"));
+            object.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void Navigate(String css, String text) throws InterruptedException {
@@ -31,7 +46,7 @@ public class Main extends Dev{
     }
 
     public void Click(String xpath) throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         try{
             WebElement object = driver.findElement(By.xpath(xpath));
             object.click();
@@ -82,20 +97,6 @@ public class Main extends Dev{
             select.selectByVisibleText(data);
         }catch (Exception ex){
             SelectBox(xpath,data);
-        }
-    }
-
-    public void StopBrowser() throws InterruptedException {
-        Thread.sleep(10); // Programın kapanmaması için
-        driver.close();
-    }
-
-    public void ClosePopup(){
-        try{
-            WebElement object = driver.findElement(By.xpath("/html/body/div[1]/div[1]"));
-            object.click();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

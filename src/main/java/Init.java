@@ -10,68 +10,69 @@ public class Init{
 
         Main main = new Main();
         String baseurl = "https://a101.com.tr";
+        //Tarayıcı Aç
         main.StartBrowser(baseurl);
 
 
-//      Cookileri kabul et
+//      Başta çıkan Cookileri Kabul Et
         main.Click("/html/body/div[2]/div/div[4]/div[1]/div[2]/button[4]");
 
-//      Blutooth Kulaklık Seçimi
-        main.Navigate("[title='ELEKTRONİK']", "Bluetooth Kulaklık");
+//      Diz Altı Çorap Kategorisi Getirilir
+        main.Navigate("[title='GİYİM & AKSESUAR']", "Dizaltı Çorap");
 
-//      Kulaklık Seçimi
-        main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[5]/article/a");
+//      Çorap Seçilir
+        main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[1]/article/a");
 
-//      Renk sec
+//      Renk Seçilir
         main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[3]/div/a");
 
-//      Sepete Ekle
+//      Sepete Eklenir
         main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[2]/div[1]/button");
 
-//      Sepete Git
+//      Sepete Gidilir
         main.Click("/html/body/div[2]/div/div[1]/div/div[3]/a[3]");
 
-//      Sepeti Onayla
+//      Sepet Onaylanır
         main.Click("/html/body/section/div[1]/div[2]/div/div[2]/div/a");
 
-//      Üue olmadan devam
+//      Üyesiz Devam Et
         main.Click("/html/body/section/div[1]/div/div[1]/div[1]/div[2]/a");
 
-//      Mail adresi git
-        main.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , System.currentTimeMillis()+"@mail.com");
+//      Mail Adresine Git
+        main.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk01@mail.com");
 
-//      Devam butonu
+//      Devam Butonuna Bas
         main.Click("/html/body/section/div[1]/div/div[2]/div/div/form/button");
 
-//      Adres oluştur
+//      Adres Oluşturulur
         main.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[1]/div[2]/ul[2]/li/a");
 
-//      Adres başlığı
-        main.Write("/html/body/div[1]/div/div[2]/form/div[2]/div/div/label/input",System.currentTimeMillis()+"");
+//      Adres Başlığı
+        main.Write("/html/body/div[1]/div/div[2]/form/div[2]/div/div/label/input","EV");
 
-//      İsim
-        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[1]/div/label/input",System.currentTimeMillis()+"John");
+//      Ad
+        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[1]/div/label/input",System.currentTimeMillis()+"Numan");
 
-//      Soyisim
-        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[2]/div/label/input",System.currentTimeMillis()+"Doe");
+//      Soyad
+        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[2]/div/label/input",System.currentTimeMillis()+"AKOLUK");
 
-//      Telefon numarası
-        main.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","08796524311");
+//      Telefon Numarası
+        main.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","0500 000 0000");
 
-//      il
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[1]/div/label/div/select","İZMİR");
+//      İl
+        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[1]/div/label/div/select","İSTANBUL");
 
 //      İlçe
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[2]/div/label/div/select","BUCA");
+        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[2]/div/label/div/select","ŞİŞLİ");
 
 //      Mahalle
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[6]/label/div/select","29 EKİM MAH");
+        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[6]/label/div/select","PAŞA MAH");
 
 //      Adres
-        main.Write("/html/body/div[1]/div/div[2]/form/div[7]/label/textarea",System.currentTimeMillis()+"ev adresimi ekliyorum.");
+        main.Write("/html/body/div[1]/div/div[2]/form/div[7]/label/textarea","Ev Adresim Açıklaması...");
 
 //      Posta kodu
-        main.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","56478");
+        main.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","012345");
 
 //      Kaydet
         main.Click("/html/body/div[1]/div/div[2]/form/button[1]");
@@ -86,6 +87,7 @@ public class Init{
 //      Siparişi tmamala
         Boolean data = main.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
 
+//      Tarayıcı Kapat
         main.StopBrowser();
 
         return data;

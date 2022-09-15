@@ -13,17 +13,4 @@ public class First {
         Boolean data = Init.StartTest();
         Assert.assertTrue(data);
     }
-
-    @Test
-    public void run2(){
-        System.setProperty("webdriver.chrome.driver","C:\\Selenium\\A101Project\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-
-        driver.get("https://a101.com.tr");
-//        driver.findElement(By.xpath("")).isDisplayed();
-        WebElement object = driver.findElement(By.cssSelector("button[class='kampanyalar']"));
-        System.out.println(object.getText());
-        driver.close();
-    }
-
 }
