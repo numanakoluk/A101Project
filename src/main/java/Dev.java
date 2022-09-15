@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Dev {
-    protected String path = "C:\\Selenium\\A101Project\\chromedriver.exe";
+    public String path = "C:\\Selenium\\A101Project\\chromedriver.exe";
     public static WebDriver driver;
     public ChromeOptions options = new ChromeOptions();
 

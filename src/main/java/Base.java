@@ -4,11 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.text.html.CSS;
+public class Base extends Dev{
 
-public class Main extends Dev{
+    public Base(){
 
-    public Main(){}
+    }
 
     //Object
     public WebDriver driver = Dev.driver;
@@ -73,7 +73,7 @@ public class Main extends Dev{
     public void Write(String xpath, String data) throws InterruptedException {
         Thread.sleep(1000);
         try{
-            //Xpath ile çek.
+            //Get With XPath
             WebElement object = driver.findElement(By.xpath(xpath));
             object.sendKeys(data);
         }catch (Exception e){

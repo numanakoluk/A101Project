@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Init{
 
     public static void main(String[] args) throws InterruptedException {
@@ -8,88 +10,139 @@ public class Init{
 
     static Boolean StartTest() throws InterruptedException{
 
-        Main main = new Main();
+        Base base = new Base();
         String baseurl = "https://a101.com.tr";
 
         //Open browser
-        main.StartBrowser(baseurl);
+        base.StartBrowser(baseurl);
+        System.out.println(new Date()+"-Open browser");
 
 
 //      Accept Cookies
-        main.Click("/html/body/div[2]/div/div[4]/div[1]/div[2]/button[4]");
+        base.Click("/html/body/div[2]/div/div[4]/div[1]/div[2]/button[4]");
+        System.out.println(new Date()+"-Accept Cookies");
+
 
 //      Below Knee Socks Category
-        main.Navigate("[title='GİYİM & AKSESUAR']", "Dizaltı Çorap");
+        base.Navigate("[title='GİYİM & AKSESUAR']", "Dizaltı Çorap");
+        System.out.println(new Date()+"-Below Knee Socks Category");
+
 
 //      Choose Socks
-        main.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[1]/article/a");
+        base.Click("/html/body/section/section[4]/div[3]/div[2]/div/div[2]/div[2]/div/ul/li[1]/article/a");
+        System.out.println(new Date()+"-Choose Socks");
+
 
 //      Choose Color
-        main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/a");
+        base.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/a");
+        System.out.println(new Date()+"-Choose Color");
+
 
 //      Add To Basket
-        main.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[2]/div[1]/button");
+        base.Click("/html/body/section/section[3]/div[2]/div[1]/div/div[3]/div[2]/div[1]/button");
+        System.out.println(new Date()+"-Add To Basket");
+
 
 //      Go to Basket
-        main.Click("/html/body/div[2]/div/div[1]/div/div[3]/a[3]");
+        base.Click("/html/body/div[2]/div/div[1]/div/div[3]/a[3]");
+        System.out.println(new Date()+"-Go to Basket");
+
 
 //      Approve to Basket
-        main.Click("/html/body/section/div[1]/div[2]/div/div[2]/div/a");
+        base.Click("/html/body/section/div[1]/div[2]/div/div[2]/div/a");
+        System.out.println(new Date()+"-Approve to Basket");
+
 
 //      Continue Without Membership
-        main.Click("/html/body/section/div[1]/div/div[1]/div[1]/div[2]/a");
+        base.Click("/html/body/section/div[1]/div/div[1]/div[1]/div[2]/a");
+        System.out.println(new Date()+"-Continue Without Membership");
+
 
 //      Go To Email Address
-        main.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk01@mail.com");
+        base.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk01@mail.com");
+        System.out.println(new Date()+"-Go To Email Address");
+
 
 //      Press Continue Button
-        main.Click("/html/body/section/div[1]/div/div[2]/div/div/form/button");
+        base.Click("/html/body/section/div[1]/div/div[2]/div/div/form/button");
+        System.out.println(new Date()+"-Press Continue Button");
+
 
 //      Create Address
-        main.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[1]/div[2]/ul[2]/li/a");
+        base.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[1]/div[2]/ul[2]/li/a");
+        System.out.println(new Date()+"-Create Address");
+
 
 //      Address Title
-        main.Write("/html/body/div[1]/div/div[2]/form/div[2]/div/div/label/input","EV");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[2]/div/div/label/input","EV");
+        System.out.println(new Date()+"-Address Title");
+
 
 //      Name
-        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[1]/div/label/input",System.currentTimeMillis()+"Numan");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[1]/div/label/input",System.currentTimeMillis()+"Numan");
+        System.out.println(new Date()+"-Name");
+
 
 //      Surname
-        main.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[2]/div/label/input",System.currentTimeMillis()+"AKOLUK");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[3]/div[2]/div/label/input",System.currentTimeMillis()+"AKOLUK");
+        System.out.println(new Date()+"-Surname");
+
 
 //      Phone Number
-        main.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","05000000000");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[4]/div/div/label/input","05796524311");
+        System.out.println(new Date()+"-Phone Number");
+
 
 //      Country
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[1]/div/label/div/select","İSTANBUL");
+        base.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[1]/div/label/div/select","İSTANBUL");
+        System.out.println(new Date()+"-Country");
+
 
 //      District
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[2]/div/label/div/select","ŞİŞLİ");
+        base.SelectBox("/html/body/div[1]/div/div[2]/form/div[5]/div[2]/div/label/div/select","ŞİŞLİ");
+        System.out.println(new Date()+"-District");
+
 
 //      Neighbourhood
-        main.SelectBox("/html/body/div[1]/div/div[2]/form/div[6]/label/div/select","PAŞA MAH");
+        base.SelectBox("/html/body/div[1]/div/div[2]/form/div[6]/label/div/select","PAŞA MAH");
+        System.out.println(new Date()+"-Neighbourhood");
+
 
 //      Address
-        main.Write("/html/body/div[1]/div/div[2]/form/div[7]/label/textarea","Ev Adresim Açıklaması...");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[7]/label/textarea","Ev Adresim Açıklaması...");
+        System.out.println(new Date()+"-Address");
+
 
 //      Post Code
-        main.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","00000");
+        base.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","00000");
+        System.out.println(new Date()+"-Post Code");
+
 
 //      Save
-        main.Click("/html/body/div[1]/div/div[2]/form/button[1]");
+        base.Click("/html/body/div[1]/div/div[2]/form/button[1]");
+        System.out.println(new Date()+"-Save");
+
 
 //      Select the first shipping company
-        main.ClickCss("div[class='check']");
+        base.ClickCss("div[class='check']");
+        System.out.println(new Date()+"-Select the first shipping company");
+
 
 //      Save and Continue
-        main.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[2]/form/div[2]/button");
+        base.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[2]/form/div[2]/button");
+        System.out.println(new Date()+"-Save and Continue");
+
 
 
 //      Complate Order
-        Boolean data = main.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
+        Boolean data = base.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
+        System.out.println(new Date()+"-Complate Order");
+
 
 //      Close Browser
-        main.StopBrowser();
+        base.StopBrowser();
+        System.out.println(new Date()+"-Close Browser");
+
 
         return data;
     }
