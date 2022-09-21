@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class Base extends Dev{
+public class Base extends Dev {
 
-    public Base(){
+    public Base() {
 
     }
 
@@ -14,7 +14,7 @@ public class Base extends Dev{
     public WebDriver driver = Dev.driver;
 
     //Methods
-    public void StartBrowser(String url){
+    public void StartBrowser(String url) {
         //Opening in Big Window
         driver.manage().window().maximize();
         driver.get(url);
@@ -25,8 +25,9 @@ public class Base extends Dev{
         Thread.sleep(10);
         driver.close();
     }
-    public void ClosePopup(){
-        try{
+
+    public void ClosePopup() {
+        try {
             WebElement object = driver.findElement(By.xpath("/html/body/div[1]/div[1]"));
             object.click();
         } catch (Exception e) {
@@ -48,7 +49,7 @@ public class Base extends Dev{
 
     public void Click(String xpath) throws InterruptedException {
         Thread.sleep(1000);
-        try{
+        try {
             WebElement object = driver.findElement(By.xpath(xpath));
             object.click();
         } catch (Exception e) {
@@ -59,7 +60,7 @@ public class Base extends Dev{
 
     public void ClickCss(String css) throws InterruptedException {
         Thread.sleep(500);
-        try{
+        try {
             WebElement object = driver.findElement(By.cssSelector(css));
             object.click();
         } catch (Exception e) {
@@ -72,32 +73,50 @@ public class Base extends Dev{
 
     public void Write(String xpath, String data) throws InterruptedException {
         Thread.sleep(1000);
-        try{
+        try {
             //Get With XPath
             WebElement object = driver.findElement(By.xpath(xpath));
             object.sendKeys(data);
-        }catch (Exception e){
-            Write(xpath , data);
+        } catch (Exception e) {
+            Write(xpath, data);
         }
     }
 
     public Boolean Check(String xpath) throws InterruptedException {
-        Thread.sleep(1000);
-        if(!driver.findElement(By.xpath(xpath)).isDisplayed()){
+        Thread.sleep(4000);
+        if (!driver.findElement(By.xpath(xpath)).isDisplayed()) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
     public void SelectBox(String xpath, String data) throws InterruptedException {
         Thread.sleep(500);
-        try{
+        try {
             WebElement object = driver.findElement(By.xpath(xpath));
             Select select = new Select(object);
             select.selectByVisibleText(data);
-        }catch (Exception ex){
-            SelectBox(xpath,data);
+        } catch (Exception ex) {
+            SelectBox(xpath, data);
         }
+    }
+
+    //Checkbox
+    public void CheckBox(String xpath,String data) throws InterruptedException{
+        Thread.sleep(1000);
+        try {
+
+        WebElement titleCheckButton = driver.findElement(By.id(xpath));
+        Actions action = new Actions(driver);
+        action.moveToElement(titleCheckButton).click().build().perform();
+
+        }
+
+        catch (Exception e){
+            CheckBox(xpath,data);
+        }
+
+
     }
 }

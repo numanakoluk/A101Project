@@ -59,7 +59,7 @@ public class Init{
 
 
 //      Go To Email Address
-        base.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk"+Math.floor(Math.random()*11) + "@gmail.com");
+        base.Write("/html/body/section/div[1]/div/div[2]/div/div/form/div[1]/input" , "numanakoluk"+Math.floor(Math.random()*1111) + "@gmail.com");
         System.out.println(new Date()+"-Go To Email Address");
 
 
@@ -114,9 +114,6 @@ public class Init{
         System.out.println(new Date()+"-Address");
 
 
-//      Post Code
-        base.Write("/html/body/div[1]/div/div[2]/form/div[8]/div/div/label/input","00000");
-        System.out.println(new Date()+"-Post Code");
 
 
 //      Save
@@ -133,17 +130,31 @@ public class Init{
         base.Click("/html/body/section/section/div/div[2]/div/div[1]/div/div[2]/form/div[2]/button");
         System.out.println(new Date()+"-Save and Continue");
 
+        //Credit Card Information
+        base.Write("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[1]/label/input","Numan Akoluk");
 
+        base.Write("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[2]/label/input[1]","1111111111111111");
 
-//      Complate Order
-        Boolean data = base.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
+        base.SelectBox("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[3]/div[2]/select","7");
+
+        base.SelectBox("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[3]/div[3]/select","2026");
+
+        base.Write("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[4]/label/input","555");
+
+        System.out.println(new Date()+"-Kredit Card Information");
+
+        //CheckBox
+        base.CheckBox("agrement2","Error");
+
+        base.Click("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[2]/div[2]/div[6]/button");
+
+        //Complate Order
+        Boolean data = base.Check("/html/body/section/section/div/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[2]/div[6]/div[2]/label/input[1]");
         System.out.println(new Date()+"-Complate Order");
 
-
-//      Close Browser
+        //Close Browser
         base.StopBrowser();
         System.out.println(new Date()+"-Close Browser");
-
 
         return data;
     }
