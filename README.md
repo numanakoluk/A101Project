@@ -1,7 +1,7 @@
 # A101TestProject
 https://user-images.githubusercontent.com/89300182/191601912-6798c06c-3372-4ad7-99a6-aca3fa6c2800.mp4
-# **Selenium ile Test Otomasyonu** //Intelij 
-# AllSteps A101 Web Scenario
+# **Selenium ile Test Otomasyonu** //Intelij //MVN test
+# AllSteps A101 Web Scenario 
 **Tags:chrome**
 1. [+] **Web'te Giyim&Aksesuar kategorisine gidilir.**
 2. [+] **Web'te Kadın İç Giyim alt kategorisine gidilir.**
@@ -12,7 +12,8 @@ https://user-images.githubusercontent.com/89300182/191601912-6798c06c-3372-4ad7-
 7. [+] **Web'te Email hesabı girilir ve devam edilir.**
 8. [+] **Web'te Yeni adres kaydı oluşturulur.**
 9. [+] **Web'te Ödeme ekranına gidilir ve Kart bilgileri girilir.**
-10.[+] **Web'te Ödeme ekranına gidildiği doğrulanır.**
+10. [+] **Web'te Ödeme ekranına gidildiği doğrulanır.**
+
 
 ![image](https://user-images.githubusercontent.com/89300182/192616508-89222178-a89b-49f2-a9d7-ffdb7564a079.png)
 
